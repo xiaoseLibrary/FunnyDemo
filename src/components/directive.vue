@@ -1,11 +1,6 @@
 <template>
   <div>
-    <el-button
-      type="primary"
-      icon="el-icon-arrow-left"
-      circle
-      @click="openView('/')"
-    ></el-button>
+    <goBackBtn></goBackBtn>
     <div class="contentBox">
       <div class="title">防抖</div>
       <el-input
@@ -26,16 +21,17 @@
 </template>
 
 <script>
+import goBackBtn from "@/components/common/gobackBtn.vue";
 export default {
   data() {
     return {
       input: ""
     };
   },
+  components: {
+    goBackBtn
+  },
   methods: {
-    openView(path) {
-      this.$router.replace(path);
-    },
     debounce() {
       console.log(this.input);
     },

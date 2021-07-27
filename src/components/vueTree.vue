@@ -1,11 +1,6 @@
 <template>
   <div>
-    <el-button
-      type="primary"
-      icon="el-icon-arrow-left"
-      circle
-      @click="openView('/')"
-    ></el-button>
+    <goBackBtn></goBackBtn>
     <!-- <TreeChart :json="treeData" @click-node="getNode" class="rootNode" /> -->
     <vueTree :json="treeData" @click-node="getNode" v-if="treeShow"></vueTree>
     <span>
@@ -17,7 +12,8 @@
 
 <script>
 import vueTree from "@/components/vueTree/index.vue";
-import TreeChart from "vue-tree-chart";
+import goBackBtn from "@/components/common/gobackBtn.vue";
+// import TreeChart from "vue-tree-chart";
 export default {
   data() {
     return {
@@ -25,6 +21,7 @@ export default {
       treeShow: true,
       treeData: {
         name: "root",
+        // eslint-disable-next-line no-undef
         image_url: require("@/assets/img/eva1.jpg"),
         class: ["rootNode", "diyNode"],
         parentId: 0,
@@ -34,12 +31,14 @@ export default {
             parentId: 1,
             id: 2,
             name: "children1",
+            // eslint-disable-next-line no-undef
             image_url: require("@/assets/img/eva1.jpg")
           },
           {
             parentId: 1,
             id: 3,
             name: "children2",
+            // eslint-disable-next-line no-undef
             image_url: require("@/assets/img/eva1.jpg"),
             // mate: [
             //   {
@@ -52,23 +51,27 @@ export default {
                 id: 4,
                 parentId: 3,
                 name: "grandchild",
+                // eslint-disable-next-line no-undef
                 image_url: require("@/assets/img/eva1.jpg")
               },
               {
                 id: 5,
                 name: "grandchild2",
                 parentId: 3,
+                // eslint-disable-next-line no-undef
                 image_url: require("@/assets/img/eva1.jpg"),
                 children: [
                   {
                     id: 6,
                     parentId: 5,
+                    // eslint-disable-next-line no-undef
                     image_url: require("@/assets/img/eva1.jpg"),
                     name: "test1"
                   },
                   {
                     id: 7,
                     parentId: 5,
+                    // eslint-disable-next-line no-undef
                     image_url: require("@/assets/img/eva1.jpg"),
                     name: "test2"
                   }
@@ -77,6 +80,7 @@ export default {
               {
                 id: 8,
                 parentId: 3,
+                // eslint-disable-next-line no-undef
                 image_url: require("@/assets/img/eva1.jpg"),
                 name: "grandchild3"
               }
@@ -85,6 +89,7 @@ export default {
           {
             id: 9,
             parentId: 1,
+            // eslint-disable-next-line no-undef
             image_url: require("@/assets/img/eva1.jpg"),
             name: "children3"
           }
@@ -93,13 +98,11 @@ export default {
     };
   },
   components: {
-    TreeChart,
-    vueTree
+    // TreeChart,
+    vueTree,
+    goBackBtn
   },
   methods: {
-    openView(path) {
-      this.$router.replace(path);
-    },
     getNode($event) {
       console.log("$event: ", $event);
       this.fatherNodeName = $event.parent_name ? $event.parent_name : "无上级";
@@ -108,6 +111,7 @@ export default {
     //添加节点
     addEvent($event) {
       this.treeShow = false;
+      // eslint-disable-next-line no-prototype-builtins
       if ($event.hasOwnProperty("children")) {
         $event.children.push({ name: "test100" });
       } else {

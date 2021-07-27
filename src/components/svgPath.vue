@@ -1,11 +1,6 @@
 <template>
   <div>
-    <el-button
-      type="primary"
-      icon="el-icon-arrow-left"
-      circle
-      @click="openView('/')"
-    ></el-button>
+    <goBackBtn></goBackBtn>
     <div class="svgBox">
       <svg width="500" height="500">
         <path
@@ -71,14 +66,13 @@
 </template>
 
 <script>
+import goBackBtn from "@/components/common/gobackBtn.vue";
 export default {
   data() {
     return {};
   },
-  methods: {
-    openView(path) {
-      this.$router.replace(path);
-    }
+  components: {
+    goBackBtn
   }
 };
 </script>

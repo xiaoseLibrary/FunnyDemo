@@ -1,11 +1,6 @@
 <template>
   <div class="box">
-    <el-button
-      type="primary"
-      icon="el-icon-arrow-left"
-      circle
-      @click="openView('/')"
-    ></el-button>
+    <goBackBtn></goBackBtn>
     <div class="vessel">
       <img :src="newUrl('img/dog', 'png')" v-magnify />
       <img :src="newUrl('img/dog2', 'jpg')" v-magnify />
@@ -16,17 +11,19 @@
 </template>
 
 <script>
+import goBackBtn from "@/components/common/gobackBtn.vue";
 export default {
   data() {
     return {};
   },
   methods: {
     newUrl(fileName, rule) {
+      // eslint-disable-next-line no-undef
       return require(`@/assets/${fileName}.${rule}`);
-    },
-    openView(path) {
-      this.$router.replace(path);
     }
+  },
+  components: {
+    goBackBtn
   }
 };
 </script>

@@ -1,11 +1,6 @@
 <template>
   <div>
-    <el-button
-      type="primary"
-      icon="el-icon-arrow-left"
-      circle
-      @click="openView('/')"
-    ></el-button>
+    <goBackBtn></goBackBtn>
     <div>
       <div class="b">
         <span class="t">五一快乐</span>
@@ -25,16 +20,16 @@
 </template>
 
 <script>
+import goBackBtn from "@/components/common/gobackBtn.vue";
 export default {
   data() {
     return {
+      // eslint-disable-next-line no-undef
       eva: require("@/assets/img/eva1.jpg")
     };
   },
-  methods: {
-    openView(path) {
-      this.$router.replace(path);
-    }
+  components: {
+    goBackBtn
   }
 };
 </script>

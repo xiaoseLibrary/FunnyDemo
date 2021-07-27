@@ -1,11 +1,6 @@
 <template>
   <div class="vessel">
-    <el-button
-      type="primary"
-      icon="el-icon-arrow-left"
-      circle
-      @click="openView('/')"
-    ></el-button>
+    <goBackBtn></goBackBtn>
     <img :src="url('img/dog')" class="bascic" />
     <!-- 向上跳动 -->
     <img :src="url('img/dog')" class="bascic animation-1" />
@@ -23,20 +18,23 @@
 </template>
 
 <script>
+import goBackBtn from "@/components/common/gobackBtn.vue";
 export default {
   data() {
     return {};
   },
+  components: {
+    goBackBtn
+  },
   methods: {
     // 静态资源优雅加载
     url(fileName) {
+      // eslint-disable-next-line no-undef
       return require(`@/assets/${fileName}.png`);
     },
     newUrl(fileName, rule) {
+      // eslint-disable-next-line no-undef
       return require(`@/assets/${fileName}.${rule}`);
-    },
-    openView(path) {
-      this.$router.replace(path);
     }
   }
 };

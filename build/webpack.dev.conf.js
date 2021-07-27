@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 'use strict'
 const utils = require('./utils')
 const webpack = require('webpack')

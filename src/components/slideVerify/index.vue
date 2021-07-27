@@ -1,11 +1,6 @@
 <template>
   <div>
-    <el-button
-      type="primary"
-      icon="el-icon-arrow-left"
-      circle
-      @click="openView('/')"
-    ></el-button>
+    <goBackBtn></goBackBtn>
     <!-- 第三方验证码插件 -->
     <div class="borderBox">
       <div>
@@ -93,17 +88,19 @@
 import Vue from "vue";
 import SlideVerify from "vue-monoplasty-slide-verify";
 Vue.use(SlideVerify);
-
+import goBackBtn from "@/components/common/gobackBtn.vue";
 import Range from "./modules/range";
 import SIdentify from "./modules/identify";
 export default {
   name: "App",
   components: {
     Range,
+    goBackBtn,
     SIdentify
   },
   data() {
     return {
+      // eslint-disable-next-line no-undef
       img: [require("@/assets/img/eva1.jpg"), require("@/assets/img/eva2.jpg")],
       msg: "",
       text: "向右滑",
@@ -117,9 +114,6 @@ export default {
     };
   },
   methods: {
-    openView(path) {
-      this.$router.replace(path);
-    },
     onSuccess(time) {
       this.text = Number(time / 1000) + "s";
       this.msg = "验证成功";

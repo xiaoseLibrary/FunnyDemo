@@ -78,6 +78,7 @@ export default {
   props: ["json"],
   data() {
     return {
+      // eslint-disable-next-line no-undef
       imgsize: require("@/assets/img/eva2.jpg"),
       treeData: {}
     };

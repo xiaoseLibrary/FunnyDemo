@@ -1,11 +1,6 @@
 <template>
   <div>
-    <el-button
-      type="primary"
-      icon="el-icon-arrow-left"
-      circle
-      @click="openView('/')"
-    ></el-button>
+    <goBackBtn></goBackBtn>
     <div style="margin:20px 0 50px 20px">
       <span
         v-for="item in imgList"
@@ -30,20 +25,24 @@
 </template>
 
 <script>
+import goBackBtn from "@/components/common/gobackBtn.vue";
 export default {
   data() {
     return {
       imgList: [
         {
           name: "EVA",
+          // eslint-disable-next-line no-undef
           src: require("@/assets/img/eva1.jpg")
         },
         {
           name: "EVA2",
+          // eslint-disable-next-line no-undef
           src: require("@/assets/img/eva2.jpg")
         },
         {
           name: "DYZ",
+          // eslint-disable-next-line no-undef
           src: require("@/assets/img/dyz.jpg")
         }
       ],
@@ -133,27 +132,27 @@ export default {
     chooseFilter(data, canvas, imgData, index) {
       if (index === "0") {
         // 灰度
-        for (var i = 0; i < data.length; i += 4) {
+        for (let i = 0; i < data.length; i += 4) {
           var grey = (data[i] + data[i + 1] + data[i + 2]) / 3;
           data[i] = data[i + 1] = data[i + 2] = grey;
         }
       } else if (index === "1") {
         // 黑白滤镜
-        for (var i = 0; i < data.length; i += 4) {
-          var avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
+        for (let i = 0; i < data.length; i += 4) {
+          let avg = (data[i] + data[i + 1] + data[i + 2]) / 3;
           data[i] = data[i + 1] = data[i + 2] = avg >= 100 ? 255 : 0;
         }
       } else if (index === "2") {
         // 反向滤镜
-        for (var i = 0; i < data.length; i += 4) {
+        for (let i = 0; i < data.length; i += 4) {
           data[i] = 255 - data[i];
           data[i + 1] = 255 - data[i + 1];
           data[i + 2] = 255 - data[i + 2];
         }
       } else if (index === "3") {
         // 去色
-        for (var i = 0; i < data.length; i++) {
-          var avg = Math.floor(
+        for (let i = 0; i < data.length; i++) {
+          let avg = Math.floor(
             (Math.min(data[i], data[i + 1], data[i + 2]) +
               Math.max(data[i], data[i + 1], data[i + 2])) /
               2
@@ -162,7 +161,7 @@ export default {
         }
       } else if (index === "4") {
         // 单色滤镜
-        for (var i = 0; i < canvas.height * canvas.width; i++) {
+        for (let i = 0; i < canvas.height * canvas.width; i++) {
           data[i * 4 + 2] = 0;
           data[i * 4 + 1] = 0;
         }
@@ -182,7 +181,7 @@ export default {
             a = 1 / (2 * sigma * sigma * Math.PI),
             b = -a * Math.PI;
 
-          for (var i = -radius; i <= radius; i++) {
+          for (let i = -radius; i <= radius; i++) {
             for (var j = -radius; j <= radius; j++) {
               var gxy = a * Math.exp((i * i + j * j) * b);
               gaussMatrix.push(gxy);
@@ -190,21 +189,25 @@ export default {
             }
           }
           var gaussNum = (radius + 1) * (radius + 1);
-          for (var i = 0; i < gaussNum; i++) {
+          for (let i = 0; i < gaussNum; i++) {
             gaussMatrix[i] /= gaussSum;
           }
 
           for (var x = 0; x < width; x++) {
             for (var y = 0; y < height; y++) {
+              // eslint-disable-next-line no-undef
               var r = (g = b = 0);
               for (var i = -radius; i <= radius; i++) {
+                // eslint-disable-next-line no-undef
                 var m = handleEdge(i, x, width);
-                for (var j = -radius; j <= radius; j++) {
+                for (let j = -radius; j <= radius; j++) {
+                  // eslint-disable-next-line no-undef
                   var mm = handleEdge(j, y, height);
                   var currentPixId = (mm * width + m) * 4;
                   var jj = j + radius;
                   var ii = i + radius;
                   r += pixes[currentPixId] * gaussMatrix[jj * gaussEdge + ii];
+                  // eslint-disable-next-line no-undef
                   g +=
                     pixes[currentPixId + 1] * gaussMatrix[jj * gaussEdge + ii];
                   b +=
@@ -214,6 +217,7 @@ export default {
               var pixId = (y * width + x) * 4;
 
               pixes[pixId] = ~~r;
+              // eslint-disable-next-line no-undef
               pixes[pixId + 1] = ~~g;
               pixes[pixId + 2] = ~~b;
             }
@@ -224,15 +228,15 @@ export default {
         }
       } else if (index === "6") {
         // 怀旧滤镜
-        for (var i = 0; i < imgData.height * imgData.width; i++) {
-          var r = imgData.data[i * 4],
+        for (let i = 0; i < imgData.height * imgData.width; i++) {
+          let r = imgData.data[i * 4],
             g = imgData.data[i * 4 + 1],
             b = imgData.data[i * 4 + 2];
 
-          var newR = 0.393 * r + 0.769 * g + 0.189 * b;
-          var newG = 0.349 * r + 0.686 * g + 0.168 * b;
-          var newB = 0.272 * r + 0.534 * g + 0.131 * b;
-          var rgbArr = [newR, newG, newB].map(e => {
+          let newR = 0.393 * r + 0.769 * g + 0.189 * b;
+          let newG = 0.349 * r + 0.686 * g + 0.168 * b;
+          let newB = 0.272 * r + 0.534 * g + 0.131 * b;
+          let rgbArr = [newR, newG, newB].map(e => {
             return e < 0 ? 0 : e > 255 ? 255 : e;
           });
           [
@@ -243,15 +247,15 @@ export default {
         }
       } else if (index === "7") {
         // 熔铸滤镜
-        for (var i = 0; i < imgData.height * imgData.width; i++) {
-          var r = imgData.data[i * 4],
+        for (let i = 0; i < imgData.height * imgData.width; i++) {
+          let r = imgData.data[i * 4],
             g = imgData.data[i * 4 + 1],
             b = imgData.data[i * 4 + 2];
 
-          var newR = (r * 128) / (g + b + 1);
-          var newG = (g * 128) / (r + b + 1);
-          var newB = (b * 128) / (g + r + 1);
-          var rgbArr = [newR, newG, newB].map(e => {
+          let newR = (r * 128) / (g + b + 1);
+          let newG = (g * 128) / (r + b + 1);
+          let newB = (b * 128) / (g + r + 1);
+          let rgbArr = [newR, newG, newB].map(e => {
             return e < 0 ? 0 : e > 255 ? 255 : e;
           });
           [
@@ -262,15 +266,15 @@ export default {
         }
       } else if (index === "8") {
         // 冰冻滤镜
-        for (var i = 0; i < imgData.height * imgData.width; i++) {
-          var r = imgData.data[i * 4],
+        for (let i = 0; i < imgData.height * imgData.width; i++) {
+          let r = imgData.data[i * 4],
             g = imgData.data[i * 4 + 1],
             b = imgData.data[i * 4 + 2];
 
-          var newR = ((r - g - b) * 3) / 2;
-          var newG = ((g - r - b) * 3) / 2;
-          var newB = ((b - g - r) * 3) / 2;
-          var rgbArr = [newR, newG, newB].map(e => {
+          let newR = ((r - g - b) * 3) / 2;
+          let newG = ((g - r - b) * 3) / 2;
+          let newB = ((b - g - r) * 3) / 2;
+          let rgbArr = [newR, newG, newB].map(e => {
             return e < 0 ? 0 : e > 255 ? 255 : e;
           });
           [
@@ -281,15 +285,15 @@ export default {
         }
       } else if (index === "9") {
         // 连环画滤镜
-        for (var i = 0; i < imgData.height * imgData.width; i++) {
-          var r = imgData.data[i * 4],
+        for (let i = 0; i < imgData.height * imgData.width; i++) {
+          let r = imgData.data[i * 4],
             g = imgData.data[i * 4 + 1],
             b = imgData.data[i * 4 + 2];
 
-          var newR = (Math.abs(g - b + g + r) * r) / 256;
-          var newG = (Math.abs(b - g + b + r) * r) / 256;
-          var newB = (Math.abs(b - g + b + r) * g) / 256;
-          var rgbArr = [newR, newG, newB];
+          let newR = (Math.abs(g - b + g + r) * r) / 256;
+          let newG = (Math.abs(b - g + b + r) * r) / 256;
+          let newB = (Math.abs(b - g + b + r) * g) / 256;
+          let rgbArr = [newR, newG, newB];
           [
             imgData.data[i * 4],
             imgData.data[i * 4 + 1],
@@ -298,15 +302,15 @@ export default {
         }
       } else if (index === "10") {
         // 褐色滤镜
-        for (var i = 0; i < imgData.height * imgData.width; i++) {
-          var r = imgData.data[i * 4],
+        for (let i = 0; i < imgData.height * imgData.width; i++) {
+          let r = imgData.data[i * 4],
             g = imgData.data[i * 4 + 1],
             b = imgData.data[i * 4 + 2];
 
-          var newR = r * 0.393 + g * 0.769 + b * 0.189;
-          var newG = r * 0.349 + g * 0.686 + b * 0.168;
-          var newB = r * 0.272 + g * 0.534 + b * 0.131;
-          var rgbArr = [newR, newG, newB];
+          let newR = r * 0.393 + g * 0.769 + b * 0.189;
+          let newG = r * 0.349 + g * 0.686 + b * 0.168;
+          let newB = r * 0.272 + g * 0.534 + b * 0.131;
+          let rgbArr = [newR, newG, newB];
           [
             imgData.data[i * 4],
             imgData.data[i * 4 + 1],
@@ -314,10 +318,10 @@ export default {
           ] = rgbArr;
         }
       }
-    },
-    openView(path) {
-      this.$router.replace(path);
     }
+  },
+  components: {
+    goBackBtn
   }
 };
 </script>

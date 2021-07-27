@@ -1,6 +1,6 @@
 <template>
   <div>
-    <gobackBtn></gobackBtn>
+    <goBackBtn></goBackBtn>
     <div class="imgSize">
       <canvas width="450" height="744" id="img"></canvas>
     </div>
@@ -12,6 +12,7 @@ import goBackBtn from "@/components/common/gobackBtn.vue";
 export default {
   data() {
     return {
+      // eslint-disable-next-line no-undef
       eva: require("@/assets/img/eva1.jpg")
     };
   },
