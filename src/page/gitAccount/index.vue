@@ -52,7 +52,8 @@ export default {
         "git config --local user.email '' #公司账号邮箱",
         "这个时候就可以使用git指令提交对应代码到对应仓库了",
         "期间会遇到error 10054的问题",
-        "ipconfig/flushdns 更新dns缓存来解决问题"
+        "ipconfig/flushdns 更新dns缓存来解决问题",
+        "git config --global http.sslVerify 'false'"
       ]
     };
   },
