@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div> 
     <goBackBtn></goBackBtn>
     <div class="textVessel">
       <div v-for="(item, index) in list" :key="index">
