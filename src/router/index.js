@@ -7,68 +7,63 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "HelloWorld",
-      component: () => import("@/components/HelloWorld")
+      name: "home",
+      component: () => import("@/page/home")
     },
     {
       path: "/clearImg",
       name: "clearImg",
-      component: () => import("@/components/clearImg")
+      component: () => import("@/page/clearImg")
     },
     {
       path: "/lvjing",
       name: "lvjing",
-      component: () => import("@/components/lvjing")
+      component: () => import("@/page/lvjing")
     },
     {
       path: "/reflect",
       name: "reflect",
-      component: () => import("@/components/reflect")
+      component: () => import("@/page/reflect")
     },
     {
       path: "/slide",
       name: "slide",
-      component: () => import("@/components/slideVerify")
+      component: () => import("@/page/slideVerify")
     },
     {
       path: "/vueTree",
       name: "vueTree",
-      component: () => import("@/components/vueTree")
+      component: () => import("@/page/vueTree")
     },
     {
       path: "/cssDemo",
       name: "cssDemo",
-      component: () => import("@/components/cssDemo")
+      component: () => import("@/page/cssDemo")
     },
     {
       path: "/svgPath",
       name: "svgPath",
-      component: () => import("@/components/svgPath")
+      component: () => import("@/page/svgPath")
     },
     {
       path: "/pinless",
       name: "pinless",
-      component: () => import("@/components/pinless")
+      component: () => import("@/page/pinless")
     },
     {
-      path: "/vueMd",
-      name: "vueMd",
-      component: () => import("@/components/vueMd")
+      path: "/picOrder",
+      name: "picOrder",
+      component: () => import("@/page/picOrder")
     },
     {
       path: "/directive",
       name: "directive",
-      component: () => import("@/components/directive")
+      component: () => import("@/page/directive")
+    },
+    {
+      path: "/gitAccount",
+      name: "gitAccount",
+      component: () => import("@/page/gitAccount")
     }
-    // {
-    //   path: "/read",
-    //   name: "read",
-    //   component: () => import("@/components/MD-read-edit/read")
-    // },
-    // {
-    //   path: "/edit",
-    //   name: "edit",
-    //   component: () => import("@/components/MD-read-edit/edit")
-    // }
   ]
 });

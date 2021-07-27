@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import goBackBtn from "@/components/common/gobackBtn.vue";
+import goBackBtn from "@/components/common/modules/gobackBtn.vue";
 export default {
   data() {
     return {

@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import vueTree from "@/components/vueTree/index.vue";
-import goBackBtn from "@/components/common/gobackBtn.vue";
+import vueTree from "@/components/vueTree/index";
+import goBackBtn from "@/components/common/modules/gobackBtn";
 // import TreeChart from "vue-tree-chart";
 export default {
   data() {

@@ -76,14 +76,19 @@ export default {
           path: "/pinless"
         },
         {
-          btnName: "Md 文件预览",
+          btnName: "图片放大查看",
           icon: "icon-009-girl",
-          path: "/vueMd"
+          path: "/picOrder"
         },
         {
           btnName: "防抖节流指令",
           icon: "icon-006-boy",
           path: "/directive"
+        },
+        {
+          btnName: "gitLab&gitHub",
+          icon: "icon-012-boy",
+          path: "/gitAccount"
         }
       ]
     };

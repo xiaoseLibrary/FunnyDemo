@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 import debounce from "./debounce";
 import throttle from "./throttle";
+import magnify from "./magnify";
 
 const directives = {
   debounce,
-  throttle
+  throttle,
+  magnify
 };
 
 export default {
