@@ -64,6 +64,11 @@ export default new Router({
       path: "/gitAccount",
       name: "gitAccount",
       component: () => import("@/page/gitAccount")
+    },
+    {
+      path: "/snake",
+      name: "snake",
+      component: () => import("@/page/snake")
     }
   ]
 });
