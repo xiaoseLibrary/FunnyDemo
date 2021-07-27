@@ -86,7 +86,7 @@ export default {
           path: "/directive"
         },
         {
-          btnName: "gitLab&gitHub111",
+          btnName: "gitLab&gitHub",
           icon: "icon-012-boy",
           path: "/gitAccount"
         }
