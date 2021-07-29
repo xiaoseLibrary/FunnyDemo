@@ -1,6 +1,8 @@
 <template>
   <div class="box">
     <goBackBtn></goBackBtn>
+    <div @click="draw">开始</div>
+    <span>{{ result }}</span>
     <div class="snakeBox">
       <canvas
         id="canvas"
@@ -23,7 +25,8 @@ export default {
       height: 0,
       color: "",
       length: 0,
-      head: ""
+      head: "",
+      result: 0
     };
   },
   methods: {
@@ -89,6 +92,7 @@ export default {
           if (con) {
             _self.draw();
           }
+          _self.result = 0;
           return;
         }
         // 绘制蛇头
@@ -118,6 +122,7 @@ export default {
           // 没吃到就要去尾，相当于整条蛇没变长
           this.body.pop();
         } else {
+          _self.result += 1;
           // 吃到了就不去尾，相当于整条蛇延长一个方格
 
           // 并且吃到了，就要重新生成一个随机食物
@@ -149,21 +154,21 @@ export default {
         // 左37  上38  右39  下40
         switch (e.keyCode) {
           case 37:
-            console.log(37);
+            // console.log(37);
             // 三元表达式，防止右移动时按左，下面同理(贪吃蛇可不能直接掉头)
             snake.direction = snake.direction === 2 ? 2 : 0;
             snake.moveSnake();
             break;
           case 38:
-            console.log(38);
+            // console.log(38);
             snake.direction = snake.direction === 3 ? 3 : 1;
             break;
           case 39:
-            console.log(39);
+            // console.log(39);
             snake.direction = snake.direction === 0 ? 0 : 2;
             break;
           case 40:
-            console.log(40);
+            // console.log(40);
             snake.direction = snake.direction === 1 ? 1 : 3;
             break;
         }
@@ -176,7 +181,6 @@ export default {
           const x = Math.round((Math.random() * (canvas.width - 40)) / 40) * 40;
           const y =
             Math.round((Math.random() * (canvas.height - 40)) / 40) * 40;
-          console.log(x, y);
           // 保证是40的倍数啊
           rect = new Rect(x, y, 40, 40, "blue");
           // 判断食物是否与蛇头蛇身重叠
@@ -228,11 +232,8 @@ export default {
 
       var timer = setInterval(() => {
         animate();
-      }, 300);
+      }, 100);
     }
-  },
-  mounted() {
-    this.draw();
   },
   components: {
     goBackBtn

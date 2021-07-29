@@ -94,6 +94,11 @@ export default {
           btnName: "贪吃蛇",
           icon: "icon-016-girl",
           path: "/snake"
+        },
+        {
+          btnName: "ThreeJs Demo",
+          icon: "icon-013-boy",
+          path: "/threeJs"
         }
       ]
     };

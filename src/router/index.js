@@ -69,6 +69,11 @@ export default new Router({
       path: "/snake",
       name: "snake",
       component: () => import("@/page/snake")
-    }
+    },
+    {
+      path: "/threeJs",
+      name: "threeJs",
+      component: () => import("@/page/threeJs")
+    },
   ]
 });
