@@ -26,6 +26,10 @@ Md 文件预览
 防抖节流指令
 
 GitHub & GitLab 同设备上传代码
+
+贪吃蛇
+
+threeJs Demo
 ```
 
 LT is small_pig
