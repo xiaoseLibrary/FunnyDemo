@@ -11,7 +11,6 @@
 import goBackBtn from "@/components/common/modules/gobackBtn.vue";
 // eslint-disable-next-line no-unused-vars
 import * as three from "three";
-// import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 export default {
   data() {
     return {};

@@ -88,7 +88,7 @@ export default {
         {
           btnName: "gitLab&gitHub",
           icon: "icon-012-boy",
-          path: "/gitAccount"
+          path: "/gitAccount" 
         },
         {
           btnName: "贪吃蛇",
