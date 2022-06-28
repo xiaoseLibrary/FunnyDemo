@@ -88,7 +88,7 @@ export default {
         {
           btnName: "gitLab&gitHub",
           icon: "icon-012-boy",
-          path: "/gitAccount" 
+          path: "/gitAccount"
         },
         {
           btnName: "贪吃蛇",
@@ -99,6 +99,11 @@ export default {
           btnName: "ThreeJs Demo",
           icon: "icon-013-boy",
           path: "/threeJs"
+        },
+        {
+          btnName: "好玩的css特效",
+          icon: "icon-011-girl",
+          path: "/playCss"
         }
       ]
     };

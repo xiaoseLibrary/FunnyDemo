@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import goBackBtn from "@/components/common/modules/gobackBtn";
 export default {
   data() {
     return {
@@ -57,9 +56,6 @@ export default {
         "git config --local credential.helper store"
       ]
     };
-  },
-  components: {
-    goBackBtn
   }
 };
 </script>

@@ -75,5 +75,10 @@ export default new Router({
       name: "threeJs",
       component: () => import("@/page/threeJs")
     },
+    {
+      path: "/playCss",
+      name: "playCss",
+      component: () => import("@/page/playCss")
+    }
   ]
 });

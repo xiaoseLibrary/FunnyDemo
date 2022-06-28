@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import goBackBtn from "@/components/common/modules/gobackBtn.vue";
 // eslint-disable-next-line no-unused-vars
 import * as three from "three";
 export default {
@@ -43,9 +42,6 @@ export default {
   },
   mounted() {
     this.draw();
-  },
-  components: {
-    goBackBtn
   }
 };
 </script>

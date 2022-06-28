@@ -12,7 +12,6 @@
 
 <script>
 import vueTree from "@/components/vueTree/index";
-import goBackBtn from "@/components/common/modules/gobackBtn";
 // import TreeChart from "vue-tree-chart";
 export default {
   data() {
@@ -99,8 +98,7 @@ export default {
   },
   components: {
     // TreeChart,
-    vueTree,
-    goBackBtn
+    vueTree
   },
   methods: {
     getNode($event) {

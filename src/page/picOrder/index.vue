@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import goBackBtn from "@/components/common/modules/gobackBtn.vue";
 export default {
   data() {
     return {};
@@ -21,9 +20,6 @@ export default {
       // eslint-disable-next-line no-undef
       return require(`@/assets/${fileName}.${rule}`);
     }
-  },
-  components: {
-    goBackBtn
   }
 };
 </script>

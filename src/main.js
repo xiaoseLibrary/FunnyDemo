@@ -6,7 +6,9 @@ import router from "./router";
 import "./assets/iconfont/iconfont.js";
 import { Button, Drawer, Input } from "element-ui";
 import Directives from "./components/common/directive/index";
+import goBackBtn from "@/components/common/modules/gobackBtn.vue";
 
+Vue.component("goBackBtn", goBackBtn);
 Vue.use(Button);
 Vue.use(Drawer);
 Vue.use(Input);

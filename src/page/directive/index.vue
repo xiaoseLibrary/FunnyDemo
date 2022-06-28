@@ -21,15 +21,11 @@
 </template>
 
 <script>
-import goBackBtn from "@/components/common/modules/gobackBtn.vue";
 export default {
   data() {
     return {
       input: ""
     };
-  },
-  components: {
-    goBackBtn
   },
   methods: {
     debounce() {

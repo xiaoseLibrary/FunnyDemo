@@ -20,16 +20,12 @@
 </template>
 
 <script>
-import goBackBtn from "@/components/common/modules/gobackBtn.vue";
 export default {
   data() {
     return {
       // eslint-disable-next-line no-undef
       eva: require("@/assets/img/eva1.jpg")
     };
-  },
-  components: {
-    goBackBtn
   }
 };
 </script>

@@ -88,14 +88,12 @@
 import Vue from "vue";
 import SlideVerify from "vue-monoplasty-slide-verify";
 Vue.use(SlideVerify);
-import goBackBtn from "@/components/common/modules/gobackBtn.vue";
 import Range from "./modules/range";
 import SIdentify from "./modules/identify";
 export default {
   name: "App",
   components: {
     Range,
-    goBackBtn,
     SIdentify
   },
   data() {
