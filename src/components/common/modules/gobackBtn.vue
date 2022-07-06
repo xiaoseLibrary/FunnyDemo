@@ -1,15 +1,12 @@
 <template>
   <div>
-    <el-button
-      type="primary"
-      icon="el-icon-arrow-left"
-      circle
-      @click="openView('/')"
-    ></el-button>
+    <fc-warp-btn text-align="center" @click="openView('/')">返 回</fc-warp-btn>
   </div>
 </template>
 
 <script>
+import { FcWarpBtn } from "fancy-components";
+new FcWarpBtn();
 export default {
   data() {
     return {};
@@ -22,4 +19,11 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+fc-warp-btn {
+  --width: 150px;
+  --height: 40px;
+  --color: #1cd;
+  --shadow-color: rgba(0, 0, 0, 0.7);
+}
+</style>

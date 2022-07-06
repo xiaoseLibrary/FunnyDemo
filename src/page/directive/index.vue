@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-10">
     <goBackBtn></goBackBtn>
     <div class="contentBox">
       <div class="title">防抖</div>

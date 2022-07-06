@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-10">
     <goBackBtn></goBackBtn>
     <div>
       <canvas ref="three" class="threeBox"></canvas>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-10">
     <goBackBtn></goBackBtn>
     <div style="margin:20px 0 50px 20px">
       <span

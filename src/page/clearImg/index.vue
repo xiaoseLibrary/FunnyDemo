@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-10">
     <goBackBtn></goBackBtn>
     <div class="imgSize">
       <canvas width="450" height="744" id="img"></canvas>

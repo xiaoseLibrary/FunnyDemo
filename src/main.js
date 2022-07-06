@@ -7,6 +7,7 @@ import "./assets/iconfont/iconfont.js";
 import { Button, Drawer, Input } from "element-ui";
 import Directives from "./components/common/directive/index";
 import goBackBtn from "@/components/common/modules/gobackBtn.vue";
+import { FcWaveFilter } from "fancy-components";
 
 Vue.component("goBackBtn", goBackBtn);
 Vue.use(Button);
@@ -14,6 +15,8 @@ Vue.use(Drawer);
 Vue.use(Input);
 Vue.use(Directives);
 Vue.config.productionTip = false;
+new FcWaveFilter();
+Vue.config.ignoredElements = [/^fc-/];
 
 /* eslint-disable no-new */
 new Vue({

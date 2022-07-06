@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-10">
     <goBackBtn></goBackBtn>
     <!-- 第三方验证码插件 -->
     <div class="borderBox">
@@ -159,7 +159,7 @@ h4 {
 }
 .explainBox {
   min-width: 200px;
-  max-height: 200px;
+  /* max-height: 200px; */
   min-height: 150px;
   margin-left: 20px;
   background: lightblue;

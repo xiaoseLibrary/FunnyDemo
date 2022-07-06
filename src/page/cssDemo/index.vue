@@ -1,5 +1,5 @@
 <template>
-  <div class="vessel">
+  <div class="vessel p-10">
     <goBackBtn></goBackBtn>
     <img :src="url('img/dog')" class="bascic" />
     <!-- 向上跳动 -->
@@ -47,7 +47,7 @@ export default {
 }
 .vessel {
   text-align: center;
-  width: 31.25rem;
+  /* width: 31.25rem; */
   margin: 0 auto;
 }
 /* 向上跳跃 */

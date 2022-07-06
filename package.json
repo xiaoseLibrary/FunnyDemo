@@ -12,6 +12,7 @@
   "dependencies": {
     "echarts": "^5.0.2",
     "element-ui": "^2.15.3",
+    "fancy-components": "0.0.22",
     "html-loader": "^2.1.2",
     "markdown-loader": "^6.0.0",
     "marked": "^2.1.3",

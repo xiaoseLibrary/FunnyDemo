@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div class="box p-10">
     <goBackBtn></goBackBtn>
     <div class="vessel">
       <img :src="newUrl('img/dog', 'png')" v-magnify />

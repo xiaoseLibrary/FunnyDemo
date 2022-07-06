@@ -1,5 +1,5 @@
 <template>
-  <div class="box">
+  <div class="box p-10">
     <goBackBtn></goBackBtn>
     <div @click="draw">开始</div>
     <span>{{ result }}</span>

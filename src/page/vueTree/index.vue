@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-10">
     <goBackBtn></goBackBtn>
     <!-- <TreeChart :json="treeData" @click-node="getNode" class="rootNode" /> -->
     <vueTree :json="treeData" @click-node="getNode" v-if="treeShow"></vueTree>

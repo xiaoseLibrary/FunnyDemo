@@ -1,12 +1,17 @@
 <template>
   <div id="app">
+    <allMenu></allMenu>
     <router-view />
   </div>
 </template>
 
 <script>
+import allMenu from "@/components/common/modules/menu";
 export default {
-  name: "App"
+  name: "App",
+  components: {
+    allMenu
+  }
 };
 </script>
 
@@ -23,5 +28,8 @@ export default {
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+}
+.p-10 {
+  padding: 10px;
 }
 </style>
