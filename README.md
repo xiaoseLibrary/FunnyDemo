@@ -30,6 +30,12 @@ GitHub & GitLab 同设备上传代码
 贪吃蛇
 
 threeJs Demo
+
+文字划上效果
+
+抽屉动画特效
+
+css波浪动效
 ```
 
 LT is small_pig
