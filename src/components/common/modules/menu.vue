@@ -109,6 +109,11 @@ export default {
           btnName: "抽屉特效",
           icon: "icon-015-boy",
           path: "/realDrawer"
+        },
+        {
+          btnName: "css波浪动效",
+          icon: "icon-014-girl",
+          path: "/waveCss"
         }
       ]
     };
@@ -137,7 +142,7 @@ export default {
     cursor: pointer;
     align-items: center;
     background: rgb(255, 66, 93);
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 50%;
     transform: translateY(-50%);

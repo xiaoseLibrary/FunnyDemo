@@ -84,6 +84,11 @@ export default new Router({
       path: "/realDrawer",
       name: "realDrawer",
       component: () => import("@/page/realDrawer")
+    },
+    {
+      path: "/waveCss",
+      name: "waveCss",
+      component: () => import("@/page/waveCss")
     }
   ]
 });

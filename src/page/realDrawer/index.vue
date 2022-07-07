@@ -1,5 +1,19 @@
 <template>
   <div>
+    <goBackBtn></goBackBtn>
+    <!-- <div class="controle"> -->
+    <input id="play" type="radio" name="controle" style="display:none" />
+    <input id="stop" type="radio" name="controle" style="display:none" />
+
+    <div class="box">
+      <label for="stop">
+        <div class="btn">stop</div>
+      </label>
+      <label for="play">
+        <div class="btn btn1">play</div>
+      </label>
+    </div>
+    <!-- </div> -->
     <div class="g-scroll" id="g-scroll"></div>
     <div class="g-wrapper">
       <div class="g-mask"></div>
@@ -109,6 +123,40 @@ export default {
 </script>
 
 <style scoped>
+.controle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99;
+}
+.box {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.btn {
+  width: 50px;
+  margin: 10px auto;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 5px;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.btn1 {
+  right: 100px !important;
+}
+#stop:checked ~ .g-wrapper .g-inner {
+  animation-play-state: paused;
+}
+
+#play:checked ~ .g-wrapper .g-inner {
+  animation-play-state: running;
+}
 @property --phase {
   syntax: "<length>";
   inherits: false;
@@ -152,7 +200,7 @@ export default {
   transform: translateY(calc(-50% + 100px)) translateZ(var(--phase))
     rotateX(90deg);
   transform-origin: bottom center;
-  animation: move 15s infinite;
+  animation: move 15s infinite alternate;
   /* animation-timeline: box-move; */
 }
 
