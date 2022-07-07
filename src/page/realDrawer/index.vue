@@ -1,30 +1,19 @@
 <template>
-  <div class="vessel">
-    <i
-      class="el-icon-apple iconBtn"
-      v-show="!drawerFlag"
-      @click="openDrawer"
-    ></i>
-    <el-drawer
-      title="Menu"
-      :visible.sync="drawer"
-      :show-close="false"
-      :modal="false"
-      :size="300"
-      @closed="drawerFlag = false"
-      direction="ltr"
-    >
-      <div v-for="(item, index) in list" :key="index">
-        <div @click="openView(item.path)" class="btnVessel">
-          <span class="svgIconBtn">
-            <svg class="icon" :class="[item.icon]" aria-hidden="true">
-              <use :xlink:href="'#' + item.icon"></use>
-            </svg>
-          </span>
-          <span class="nameBtn">{{ item.btnName }}</span>
+  <div>
+    <div class="g-scroll" id="g-scroll"></div>
+    <div class="g-wrapper">
+      <div class="g-mask"></div>
+      <div class="g-inner">
+        <div
+          class="g-item"
+          v-for="(item, index) in list"
+          :key="index"
+          @click="openPage(item.path)"
+        >
+          {{ item.btnName }}
         </div>
       </div>
-    </el-drawer>
+    </div>
   </div>
 </template>
 
@@ -32,8 +21,6 @@
 export default {
   data() {
     return {
-      drawer: false,
-      drawerFlag: false,
       list: [
         {
           btnName: "刮刮乐 Demo",
@@ -114,52 +101,83 @@ export default {
     };
   },
   methods: {
-    openDrawer() {
-      this.drawer = true;
-      this.drawerFlag = true;
-    },
-    openView(path) {
+    openPage(path) {
       this.$router.push(path);
     }
   }
 };
 </script>
 
-<style scoped lang="scss">
-.vessel {
-  .iconBtn {
-    font-size: 20px;
-    color: rgb(147, 224, 255);
-    width: 40px;
-    height: 100px;
-    display: inline-flex;
-    justify-content: center;
-    cursor: pointer;
-    align-items: center;
-    background: rgb(255, 66, 93);
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    z-index: 10;
+<style scoped>
+@property --phase {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 15px;
+}
+.g-scroll {
+  width: 100%;
+  /* height: 1000vh; */
+  position: relative;
+}
+.g-wrapper {
+  position: fixed;
+  top: -20%;
+  width: 100vw;
+  height: 100vh;
+  perspective: 200px;
+  transform-style: preserve-3d;
+}
+
+.g-mask {
+  position: fixed;
+  width: 100vw;
+  height: 120vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  transform: translateZ(0);
+}
+
+.g-inner {
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transform-style: preserve-3d;
+  transform: translateY(calc(-50% + 100px)) translateZ(var(--phase))
+    rotateX(90deg);
+  transform-origin: bottom center;
+  animation: move 15s infinite;
+  /* animation-timeline: box-move; */
+}
+
+/* @scroll-timeline box-move {
+  source: selector("#g-scroll");
+  orientation: "vertical";
+} */
+/* 目前没有浏览器支持 */
+
+.g-item {
+  width: 300px;
+  height: 200px;
+  padding: 8px;
+  box-sizing: border-box;
+  color: #fff;
+  background: #000;
+  transform: rotateX(-90deg);
+}
+
+@keyframes move {
+  0% {
+    --phase: 0;
   }
-  .btnVessel {
-    height: 30px;
-    line-height: 30px;
-    margin-bottom: 5px;
-    background-color: rgb(185, 227, 217);
-    cursor: pointer;
-    .svgIconBtn {
-      font-size: 20px;
-      margin-left: 15px;
-    }
-    .nameBtn {
-      font-size: 14px;
-      margin-left: 15px;
-      color: rgb(243, 244, 246);
-    }
+  100% {
+    --phase: calc(100vh + 100px);
   }
 }
 </style>

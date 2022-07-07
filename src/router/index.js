@@ -79,6 +79,11 @@ export default new Router({
       path: "/playCss",
       name: "playCss",
       component: () => import("@/page/playCss")
+    },
+    {
+      path: "/realDrawer",
+      name: "realDrawer",
+      component: () => import("@/page/realDrawer")
     }
   ]
 });
