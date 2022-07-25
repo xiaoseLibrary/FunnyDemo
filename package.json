@@ -10,9 +10,11 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "aplayer": "^1.10.1",
     "echarts": "^5.0.2",
     "element-ui": "^2.15.3",
     "fancy-components": "0.0.22",
+    "hls.js": "^1.1.5",
     "html-loader": "^2.1.2",
     "markdown-loader": "^6.0.0",
     "marked": "^2.1.3",

@@ -114,6 +114,11 @@ export default {
           btnName: "css波浪动效",
           icon: "icon-014-girl",
           path: "/waveCss"
+        },
+        {
+          btnName: "音乐播放器插件",
+          icon: "icon-027-boy",
+          path: "/aplayer"
         }
       ]
     };

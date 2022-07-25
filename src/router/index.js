@@ -92,6 +92,11 @@ export default new Router({
       component: () => import("@/page/waveCss")
     },
     {
+      path: "/aplayer",
+      name: "aplayer",
+      component: () => import("@/page/aplayer")
+    },
+    {
       path: "*",
       component: () => import("@/page/404Page")
     }
