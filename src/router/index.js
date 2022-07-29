@@ -97,6 +97,11 @@ export default new Router({
       component: () => import("@/page/aplayer")
     },
     {
+      path: "/borderCss",
+      name: "borderCss",
+      component: () => import("@/page/borderCss")
+    },
+    {
       path: "*",
       component: () => import("@/page/404Page")
     }

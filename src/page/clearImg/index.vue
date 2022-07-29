@@ -2,7 +2,9 @@
   <div class="p-10">
     <goBackBtn></goBackBtn>
     <div class="imgSize">
-      <canvas width="450" height="744" id="img"></canvas>
+      <div class="vessel">
+        <canvas width="450" height="744" id="img"></canvas>
+      </div>
     </div>
   </div>
 </template>
@@ -59,6 +61,16 @@ export default {
   top: 0;
   bottom: 0;
   margin: 10px auto;
+}
+.vessel {
+  width: 470px;
+  height: 764px;
+  background: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 3px dashed #000;
+  outline-offset: -5px;
 }
 canvas {
   border: 1px solid lightcoral;

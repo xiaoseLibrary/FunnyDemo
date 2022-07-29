@@ -119,6 +119,11 @@ export default {
           btnName: "音乐播放器插件",
           icon: "icon-027-boy",
           path: "/aplayer"
+        },
+        {
+          btnName: "边框Css",
+          icon: "icon-021-girl",
+          path: "/borderCss"
         }
       ]
     };
@@ -129,6 +134,7 @@ export default {
       this.drawerFlag = true;
     },
     openView(path) {
+      this.drawer = false;
       this.$router.push(path);
     }
   }
