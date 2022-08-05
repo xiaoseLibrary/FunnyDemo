@@ -102,6 +102,11 @@ export default new Router({
       component: () => import("@/page/borderCss")
     },
     {
+      path: "/sign",
+      name: "sign",
+      component: () => import("@/page/sign")
+    },
+    {
       path: "*",
       component: () => import("@/page/404Page")
     }

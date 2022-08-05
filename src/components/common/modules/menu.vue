@@ -124,6 +124,11 @@ export default {
           btnName: "边框Css",
           icon: "icon-021-girl",
           path: "/borderCss"
+        },
+        {
+          btnName: "签名板",
+          icon: "icon-017-boy",
+          path: "/sign"
         }
       ]
     };
