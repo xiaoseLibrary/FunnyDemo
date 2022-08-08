@@ -6,6 +6,7 @@
       <div class="hover-2">Css动画</div>
       <div class="hover-3">Css动画</div>
       <div class="hover-4">Css动画</div>
+      <div class="colorBtn">趁时间没发觉，让我带着你离开</div>
     </div>
   </div>
 </template>
@@ -74,6 +75,66 @@ export default {
   .hover-4:hover {
     --p: 100%;
     --s: calc(50% + 0.6em);
+  }
+}
+.colorBtn {
+  position: relative;
+  height: 80px;
+  padding: 10px;
+  display: inline-block;
+  color: rgba($color: #fff, $alpha: 1);
+  line-height: 80px;
+  font-size: 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 30px;
+  background: linear-gradient(
+    90deg,
+    rgb(39, 122, 218),
+    rgb(74, 230, 121),
+    rgb(201, 214, 13),
+    rgb(226, 20, 233),
+    rgb(16, 172, 219)
+  );
+  background-size: 400%;
+  text-shadow: 0 0 5px white, 0 0 5px white;
+}
+.colorBtn:hover {
+  animation: move 5s linear alternate infinite;
+}
+.colorBtn:hover::before {
+  filter: blur(15px);
+  opacity: 1;
+  animation: move 8s linear alternate infinite;
+}
+.colorBtn::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 240px;
+  height: 100px;
+  background: linear-gradient(
+    90deg,
+    rgb(39, 122, 218),
+    rgb(74, 230, 121),
+    rgb(243, 169, 10),
+    rgb(226, 20, 233),
+    rgb(16, 172, 219)
+  );
+  background-size: 400%;
+  opacity: 0;
+  z-index: -1;
+  border-radius: 45px;
+  transition: 0.6s;
+}
+@keyframes move {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    backgroound-position: 100%;
   }
 }
 </style>
