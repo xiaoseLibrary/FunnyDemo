@@ -107,6 +107,11 @@ export default new Router({
       component: () => import("@/page/sign")
     },
     {
+      path: "/waterMark",
+      name: "waterMark",
+      component: () => import("@/page/waterMark")
+    },
+    {
       path: "*",
       component: () => import("@/page/404Page")
     }

@@ -129,6 +129,11 @@ export default {
           btnName: "签名板",
           icon: "icon-017-boy",
           path: "/sign"
+        },
+        {
+          btnName: "水印生成",
+          icon: "icon-022-girl",
+          path: "/waterMark"
         }
       ]
     };
