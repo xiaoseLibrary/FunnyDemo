@@ -112,6 +112,16 @@ export default new Router({
       component: () => import("@/page/waterMark")
     },
     {
+      path: "/cat",
+      name: "cat",
+      component: () => import("@/page/cat")
+    },
+    {
+      path: "/crypto",
+      name: "crypto",
+      component: () => import("@/page/crypto")
+    },
+    {
       path: "*",
       component: () => import("@/page/404Page")
     }

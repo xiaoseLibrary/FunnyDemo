@@ -134,6 +134,16 @@ export default {
           btnName: "水印生成",
           icon: "icon-022-girl",
           path: "/waterMark"
+        },
+        {
+          btnName: "小猫咪",
+          icon: "icon-024-boy",
+          path: "/cat"
+        },
+        {
+          btnName: "crypto加解密",
+          icon: "icon-018-boy",
+          path: "/crypto"
         }
       ]
     };
