@@ -7,6 +7,10 @@
       <div class="hover-3">Css动画</div>
       <div class="hover-4">Css动画</div>
       <div class="colorBtn">趁时间没发觉，让我带着你离开</div>
+      <div class="button" id="btn">
+        Click
+        <span class="overlay"></span>
+      </div>
     </div>
   </div>
 </template>
@@ -136,5 +140,34 @@ export default {
   100% {
     backgroound-position: 100%;
   }
+}
+
+.button {
+  user-select: none;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  padding: 14px 40px;
+  background: linear-gradient(90deg, #0bc7f1, #c471ed);
+  border-radius: 45px;
+  margin: 0 15px;
+  font-size: 24px;
+  font-weight: 400;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 1px 1px 3px #7459e9;
+}
+
+.overlay {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: blink 0.5s linear infinite;
 }
 </style>

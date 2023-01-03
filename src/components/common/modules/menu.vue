@@ -144,6 +144,11 @@ export default {
           btnName: "crypto加解密",
           icon: "icon-018-boy",
           path: "/crypto"
+        },
+        {
+          btnName: "backgroundClip初体验",
+          icon: "icon-020-girl",
+          path: "/barrage"
         }
       ]
     };

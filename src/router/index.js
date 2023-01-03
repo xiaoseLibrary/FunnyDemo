@@ -122,6 +122,11 @@ export default new Router({
       component: () => import("@/page/crypto")
     },
     {
+      path: "/barrage",
+      name: "barrage",
+      component: () => import("@/page/barrage")
+    },
+    {
       path: "*",
       component: () => import("@/page/404Page")
     }
