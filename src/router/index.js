@@ -127,6 +127,11 @@ export default new Router({
       component: () => import("@/page/barrage")
     },
     {
+      path: "/studyThree",
+      name: "studyThree",
+      component: () => import("@/page/studyThree")
+    },
+    {
       path: "*",
       component: () => import("@/page/404Page")
     }

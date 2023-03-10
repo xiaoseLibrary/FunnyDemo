@@ -149,6 +149,11 @@ export default {
           btnName: "backgroundClip初体验",
           icon: "icon-020-girl",
           path: "/barrage"
+        },
+        {
+          btnName: "study-threeJs",
+          icon: "icon-029-girl",
+          path: "/studyThree"
         }
       ]
     };
