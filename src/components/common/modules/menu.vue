@@ -154,6 +154,11 @@ export default {
           btnName: "study-threeJs",
           icon: "icon-029-girl",
           path: "/studyThree"
+        },
+        {
+          btnName: "chatGPT-Ai",
+          icon: "icon-025-boy",
+          path: "/chatgpt"
         }
       ]
     };

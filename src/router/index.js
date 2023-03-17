@@ -132,6 +132,11 @@ export default new Router({
       component: () => import("@/page/studyThree")
     },
     {
+      path: "/chatgpt",
+      name: "chatgptAi",
+      component: () => import("@/page/chatGPTAi")
+    },
+    {
       path: "*",
       component: () => import("@/page/404Page")
     }
