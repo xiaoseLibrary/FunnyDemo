@@ -151,7 +151,7 @@ export default {
           path: "/barrage"
         },
         {
-          btnName: "study-threeJs",
+          btnName: "canvasToPicture",
           icon: "icon-029-girl",
           path: "/studyThree"
         },
@@ -159,6 +159,11 @@ export default {
           btnName: "chatGPT-Ai",
           icon: "icon-025-boy",
           path: "/chatgpt"
+        },
+        {
+          btnName: "棋盘试下",
+          icon: "icon-023-boy",
+          path: "/wgo"
         }
       ]
     };

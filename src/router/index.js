@@ -137,6 +137,11 @@ export default new Router({
       component: () => import("@/page/chatGPTAi")
     },
     {
+      path: "/wgo",
+      name: "wgo",
+      component: () => import("@/page/wgo")
+    },
+    {
       path: "*",
       component: () => import("@/page/404Page")
     }
