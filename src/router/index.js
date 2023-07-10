@@ -142,6 +142,11 @@ export default new Router({
       component: () => import("@/page/wgo")
     },
     {
+      path: "/scrollTable",
+      name: "scrollTable",
+      component: () => import("@/page/scrollTable")
+    },
+    {
       path: "*",
       component: () => import("@/page/404Page")
     }

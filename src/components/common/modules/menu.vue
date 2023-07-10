@@ -164,6 +164,11 @@ export default {
           btnName: "棋盘试下",
           icon: "icon-023-boy",
           path: "/wgo"
+        },
+        {
+          btnName: "滚动表单",
+          icon: "icon-037-girl",
+          path: "/scrollTable"
         }
       ]
     };
